@@ -23,7 +23,7 @@ export default new Vuex.Store({
   getters: {
     products: (state) => state.products,
     cart: (state) => state.cart,
-    sumPrice: (state) => state.cart.reduce((sum, item) => sum + item.price, 0)
+    sumPrice: (state) => state.cart.reduce((sum, item) => sum + item.price * item.amount, 0)
   },
   mutations: {
     addToCart (state, data) {
