@@ -4,7 +4,7 @@
     <ul>
       <li v-for="product in products">
         {{ product.name }} {{ product.price }}
-        <button @click="addToCart(product)">add to cart</button>
+        <button :id="'p_' + product.id" @click="addToCart(product)">add to cart</button>
       </li>
     </ul>
   </div>

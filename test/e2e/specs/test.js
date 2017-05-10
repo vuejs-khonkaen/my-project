@@ -9,11 +9,23 @@ module.exports = {
     const devServer = browser.globals.devServerURL
 
     browser
-      .url(devServer)
+      .url(devServer + '/shopping')
       .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js App')
-      .assert.elementCount('img', 1)
+      .click('button#p_1')
+      .assert.containsText('#sum-price', '20000')
+      .pause(1000)
+      .click('button#p_1')
+      .assert.containsText('#sum-price', '40000')
+      .pause(1000)
+      .click('button#p_2')
+      .assert.containsText('#sum-price', '70000')
+      .pause(1000)
+      .click('button#p_1')
+      .assert.containsText('#sum-price', '90000')
+      .pause(1000)
+      .click('button#p_2')
+      .assert.containsText('#sum-price', '120000')
+      .pause(1000)
       .end()
   }
 }

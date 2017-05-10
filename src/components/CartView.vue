@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
     <h1>Cart</h1>
-    <h2>{{ sumPrice }}</h2>
+    <h2 id="sum-price">{{ sumPrice }}</h2>
     <ul>
       <li v-for="item in cart">
         {{ item.name }} {{ item.price }} x {{ item.amount }}
